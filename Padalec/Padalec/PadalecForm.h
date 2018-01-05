@@ -26,8 +26,8 @@ namespace Padalec
 		const int part_width = 16;		//  to avoid glitches when hitting border
 
 		// managing score counter
-		int score_step = 10;
-		int score = 0;
+		int score_step = 10;   // how many points to add after eating an apple
+		int score = 0;		// variable which store sum of points
 
 		// creating timers for game and food generating
 		Timer^ gameloop = gcnew Timer();
@@ -38,7 +38,7 @@ namespace Padalec
 			InitializeComponent();
 			
 			start = false;
-			gameloop->Interval = 200; // like ui timer in ms
+			gameloop->Interval = 200; // like UI timer in milliseconds
 			gameloop->Tick += gcnew EventHandler(this, &PadalecForm::Game);
 			gameloop->Start();
 		}
@@ -57,9 +57,9 @@ namespace Padalec
 
 		Input::Direction direction = Input::Direction::None;
 
-		List<SnakePart^>^ snake = gcnew List<SnakePart^>();
+		List<SnakePart^>^ snake = gcnew List<SnakePart^>();		// snake object
 
-		SnakePart^ food = gcnew SnakePart();
+		SnakePart^ food = gcnew SnakePart();	// food object
 
 #pragma region HelperMetods
 
@@ -67,33 +67,39 @@ namespace Padalec
 		{
 			if (start)
 			{
-				//Permament move + walls
-				Moves();
+				//Permanent move + walls
+				Moves(); 
 
 				//Changing direction by arrow keys
-				ChangeDirection();
+				ChangeDirection();	
 
 				//Eating and score incrementation
-				Eat();
+				Eat(); 
 
 				pictureBox1->Invalidate();
 			}
 		}
 
 		void StartGame()
-		{}  // TODO: StartGame()
+		{
+			snake->Clear();
+			snake->Add(gcnew SnakePart(10, 3));
+			gameover = false;
+			score = 0;
+			direction = Input::Direction::Down; // default moving direction
+		}
 
 		void Generate()
 		{}	 // TODO: Generate() food
 
-		void ChangeDirection()
-		{}  // ChangeDirection()
+		void ChangeDirection()  // changing direction value based on pressed key
+		{}  // TODO: ChangeDirection()
 
-		void Moves()
-		{}  // Moves()
+		void Moves()  // moving head + other parts and collision check and walls
+		{}  // TODO: Moves()
 
-		void Eat()
-		{} // Eat()
+		void Eat()	// score changing with specific step and creating another apple
+		{} // TODO: Eat()
 
 #pragma endregion
 
@@ -102,7 +108,7 @@ namespace Padalec
 		// do this when form is loading
 		System::Void PadalecForm_Load(Object^ sender, EventArgs^ e)
 		{
-			//Drawing a picturebox with segments event
+			//Drawing a picture box with segments event
 			pictureBox1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this,
 														&PadalecForm::pictureBox1_Paint);
 		}
@@ -110,6 +116,9 @@ namespace Padalec
 		System::Void pictureBox1_Paint(Object^ sender, PaintEventArgs^ e)
 		{
 			// TODO: picturebox1_Paint method
+
+			// creating images (head, part and apple) on graphic object with specific methods,
+			// sizes and locations 
 		}
 
 		System::Void PadalecForm_KeyDown(Object^ sender, KeyEventArgs^ e)

@@ -2,6 +2,7 @@
 
 #include "SnakePart.h"
 #include "Input.h"
+#include "Score.h"
 
 namespace Padalec 
 {
@@ -17,21 +18,6 @@ namespace Padalec
 	{
 
 	public:
-
-		bool start = false;
-		bool gameover = false;
-
-		// snake size (board = 400x400)
-		const int part_height = 16;		// it's better to use a divisor of board size 
-		const int part_width = 16;		//  to avoid glitches when hitting border
-
-		// managing score counter
-		int score_step = 10;   // how many points to add after eating an apple
-		int score = 0;		// variable which store sum of points
-
-		// creating timers for game and food generating
-		Timer^ gameloop = gcnew Timer();
-		Timer^ foodloop = gcnew Timer();
 
 		PadalecForm(void)
 		{
@@ -55,13 +41,36 @@ namespace Padalec
 
 	private:
 
+		// snake size (board = 400x400)
+		const int part_height = 16;		// it's better to use a divisor of board size 
+		const int part_width = 16;		//  to avoid glitches when hitting border
+
+		bool start = false;
+		bool gameover = false;
+
 		Input::Direction direction = Input::Direction::None;
 
 		List<SnakePart^>^ snake = gcnew List<SnakePart^>();		// snake object
 
 		SnakePart^ food = gcnew SnakePart();	// food object
 
+		Score^ score = gcnew Score();	// score object
+
+		Timer^ gameloop = gcnew Timer();  // timer for game
+
 #pragma region HelperMetods
+
+		void StartGame()
+		{
+			snake->Clear();
+			snake->Add(gcnew SnakePart(10, 3));
+			gameover = false;
+			
+			// score initialization
+			score->SetScoreStep(10);  //score->value = 0 because of constructor
+
+			direction = Input::Direction::Down; // default moving direction
+		}
 
 		void Game(Object^ sender, EventArgs^ e)
 		{
@@ -78,15 +87,6 @@ namespace Padalec
 
 				pictureBox1->Invalidate();
 			}
-		}
-
-		void StartGame()
-		{
-			snake->Clear();
-			snake->Add(gcnew SnakePart(10, 3));
-			gameover = false;
-			score = 0;
-			direction = Input::Direction::Down; // default moving direction
 		}
 
 		void Generate()
@@ -224,7 +224,6 @@ namespace Padalec
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	};

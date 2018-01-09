@@ -90,16 +90,23 @@ namespace Padalec
 		}
 
 		void Generate()
-		{}	 // TODO: Generate() food
+		{}	 // TODO: Generate() food = change actual food location after contact with snake's head
 
-		void ChangeDirection()  // changing direction value based on pressed key
+		void ChangeDirection()  // changing direction variable value based on pressed key
 		{}  // TODO: ChangeDirection()
 
-		void Moves()  // moving head + other parts and collision check and walls
+		void Moves()  // moving head + other parts and collision check and walls based on direction
 		{}  // TODO: Moves()
 
 		void Eat()	// score changing with specific step and creating another apple
-		{} // TODO: Eat()
+		{
+			if (snake[0]->X == food->X && snake[0]->Y == food->Y)
+			{
+				snake->Add(gcnew SnakePart(snake[snake->Count - 1]->X, snake[snake->Count - 1]->Y));
+				score->ScoreIncrement();
+				Generate();
+			}
+		}
 
 #pragma endregion
 

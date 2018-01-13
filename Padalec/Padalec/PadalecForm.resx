@@ -118,6 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Head.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAUZJREFUOE+l
+        k7FLQlEUxs9Q/0VN9Y8IgWNUNDg5CBH+A60NOdZQQ7RJg4LgkEMOIS1Bg5BSWVmREeEguEiPhtLT972b
+        XiUPiD348eB73/nuveeeJ3jSoDMlrJWP2RnRxXnRhbnJoJc1rGVAh4I+gOqEwMsa1oYBTOWH70u8K+D5
+        lxtoF3jfDmlXDtb8CeiiuFkUPdl11HLQ6qLVjNdaZ/DWjAB9Ec2mwg8hGyvQVHR9yWvFA2hvVgC2yFX6
+        5q24C9hc89r5EbRXK6Ahmtnx5sSyC1iNeO10H5q1g+61aD0vmko6SofQYGZRX2sU4MUtjA34YscfAVYN
+        CQD6op9D2j0oGwE9dLd8LBqL2vBmuMjYADYnve3OalHYg+/d6gEGhPfMTlu0S/BisEYCBqPMKcQxuBMT
+        TuXd6CgH//iZAgZUAJOmQJ5+ALWmzBirK/xyAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Apple.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAGRJREFUOE9j
+        AIIFQPyJTAzSy/CFlYXhv4osw39lGeIwSC1ID0gvyIBPIIGTERz/14nyEIVBakF6QHrBBoBMBUms4uUl
+        CoPUgvSMGjBqAHUNoDQpf6UgM30FGXAeiEEmkYEZbgMAriF4wGc7TOUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="Left_Move.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="Right_Move.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>104, 17</value>
+  </metadata>
+  <metadata name="Up_Move.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>191, 17</value>
+  </metadata>
+  <metadata name="Down_Move.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>278, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAgAAAAAAAAAIAAoIAQAhgAAAICAAAAAACAAKAgBAK4gBABgYAAAAAAgAKiUAADWKAUAQEAAAAAA

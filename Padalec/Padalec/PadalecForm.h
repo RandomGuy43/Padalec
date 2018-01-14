@@ -112,7 +112,6 @@ namespace Padalec
 
 #pragma region Events
 
-		// do this when form is loading
 		System::Void PadalecForm_Load(Object^ sender, EventArgs^ e)
 		{
 			//Drawing a picture box with segments event
@@ -122,10 +121,36 @@ namespace Padalec
 
 		System::Void pictureBox1_Paint(Object^ sender, PaintEventArgs^ e)
 		{
-			// TODO: picturebox1_Paint method
+			if (start)
+			{
+				Graphics^ graphic = e->Graphics;
 
-			// creating images (head, part and apple) on graphic object with specific methods,
-			// sizes and locations 
+				if (gameover)
+				{
+					// TODO: GAME OVER CASE
+				}
+
+				else
+				{
+					String^ score_string = "  " + score->GetScoreValue().ToString();
+
+					for (int i = 1; i < snake->Count; i++)
+					{
+						graphic->DrawImage(Image::FromFile("part.png"), snake[i]->X * part_width,
+										   snake[i]->Y * part_height,
+										   part_width, part_height);
+					}
+
+					graphic->DrawImage(Image::FromFile("head.png"), snake[0]->X * part_width,
+									   snake[0]->Y * part_height,
+									   part_width, part_height);
+
+					graphic->DrawImage(Image::FromFile("apple.png"), food->X * part_width,
+									   food->Y * part_height,
+									   part_width, part_height);
+
+					label2->Text = score_string;
+				}			}
 		}
 
 		System::Void PadalecForm_KeyDown(Object^ sender, KeyEventArgs^ e)
